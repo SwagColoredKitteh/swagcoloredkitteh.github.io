@@ -1,0 +1,21 @@
+<header id="blog-header" role="banner">
+  <div id="blog-title-cont">
+    <div id="blog-title">
+      <a href="{{ "/" | relative_url }}">SwagColoredBlog</a>
+    </div>
+  </div>
+  <div id="nav-container">
+    <nav>
+      <ul>
+        <li><a href="{{ "/" | relative_url }}">Index</a></li>
+        <li><a href="{{ "/me.html" | relative_url }}">Me</a></li>
+        {% for page in site.pages %}
+          {% if page.title %}
+            <li><a href="{{ page.url | relative_url }}">{{ page.title || escape }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="rss-subscribe"><a href="{{ "/feed.xml" | relative_url }}"><img src="{{ "/assets/feed-icon-28x28.png" | relative_url }}" /></a></div>
+  </div>
+</header>

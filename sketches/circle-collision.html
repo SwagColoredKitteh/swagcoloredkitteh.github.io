@@ -1,0 +1,113 @@
+---
+layout: sketch
+---
+<script>
+
+var state1 = {
+  x1: 20,
+  y1: 30,
+  vx1: 10,
+  vy1: 10,
+  x2: 160,
+  y2: 30,
+  vx2: -9,
+  vy2: 10,
+  tMax: 15,
+  t: 0,
+  r1: 15,
+  r2: 20,
+  textOffset: 190
+};
+
+var state2 = {
+  x1: 100,
+  y1: 30,
+  vx1: 0,
+  vy1: 10,
+  x2: 155,
+  y2: 30,
+  vx2: 0,
+  vy2: 10,
+  tMax: 15,
+  t: 0,
+  r1: 15,
+  r2: 20,
+  textOffset: 190
+};
+
+var state3 = {
+  x1: 70,
+  y1: 15,
+  vx1: 2,
+  vy1: 6,
+  x2: 140,
+  y2: 15,
+  vx2: -5,
+  vy2: 10,
+  tMax: 15,
+  t: 0,
+  r1: 15,
+  r2: 15,
+  textOffset: 170
+};
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function draw() {
+  background(255);
+  push();
+  drawState(state1);
+  translate(250, 0);
+  drawState(state2);
+  translate(250, 0);
+  drawState(state3);
+  pop();
+}
+
+function drawState(state) {
+  stroke(0, 255, 0);
+  var x1 = state.x1;
+  var y1 = state.y1;
+  var x2 = state.x2;
+  var y2 = state.y2;
+  var vx1 = state.vx1;
+  var vy1 = state.vy1;
+  var vx2 = state.vx2;
+  var vy2 = state.vy2;
+  var r1 = state.r1;
+  var r2 = state.r2;
+  var t = state.t;
+  var tMax = state.tMax;
+  line(x1, y1, x1 + vx1 * tMax, y1 + vy1 * tMax);
+  line(x2, y2, x2 + vx2 * tMax, y2 + vy2 * tMax);
+  var cx1 = x1 + vx1 * t;
+  var cy1 = y1 + vy1 * t;
+  var cx2 = x2 + vx2 * t;
+  var cy2 = y2 + vy2 * t;
+  stroke(0);
+  fill(255, 0, 0);
+  ellipse(cx1, cy1, r1 * 2, r1 * 2);
+  fill(255, 0, 0);
+  ellipse(cx2, cy2, r2 * 2, r2 * 2);
+  stroke(0, 0, 255);
+  line(cx1, cy1, cx2, cy2);
+  var dx = cx2 - cx1;
+  var dy = cy2 - cy1;
+  var dist = Math.sqrt(dx * dx + dy * dy);
+  fill(193, 0, 255);
+  noStroke();
+  var textOffset = state.textOffset;
+  text("Distance = " + Math.floor(dist), textOffset, 40);
+  text("R1 = " + r1, textOffset, 60);
+  text("R2 = " + r2, textOffset, 80);
+  text("Rsum = " + (r1 + r2), textOffset, 100);
+  text("Distance - Rsum = " + Math.floor(dist - r1 - r2), textOffset, 120);
+  state.t += 0.025;
+  if(state.t > tMax) {
+    state.t = 0;
+  }
+}
+
+</script>

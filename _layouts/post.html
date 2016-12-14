@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<article id="post-article" itemscope itemtype="http://schema.org/BlogPosting">
+  <div id="post-title" itemprop="name headline">{{ page.title | escape }}</div>
+  <div id="post-time"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></div>
+  <div id="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  <div id="credits">
+    <div id="credits-title">Thank You</div>
+    <div id="credits-cont">
+      {% for person in page.credits %}
+        <div class="credits-person">
+          <div class="credits-person-title">{{ site.people[person].name | escape }}</div>
+          <div class="credits-person-inner">
+            {% if site.people[person].codingame_name %}
+              <div class="credits-codingame">
+                <img class="account_icon" src="{{ "/assets/codingame-32.png" | relative_url }}" />
+                <a href="https://www.codingame.com/profile/{{ site.people[person].codingame_profile | escape }}">{{ site.people[person].codingame_name | escape }}</a>
+              </div>
+            {% endif %}
+            {% if site.people[person].github_name %}
+              <div class="credits-github">
+                <img class="account_icon" src="{{ "/assets/github-32.png" | relative_url }}" />
+                <a href="https://github.com/{{ site.people[person].github_name | escape }}">{{ site.people[person].github_name | escape }}</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,59 @@
+title: SwagColoredBlog
+author: SwagColoredKitteh
+baseurl: ""
+url: "https://swagcoloredkitteh.github.io"
+github_username:  SwagColoredKitteh
+codingame_username: SwagColoredKitteh
+codingame_profile: b0a93582a755681d71ea7e2499359ca13530141
+
+people:
+  nikoliazekter:
+    name: nikoliazekter
+    codingame_profile: 5f446e43ade417a9ee452930b4899d7d942768
+    codingame_name: nikoliazekter
+    github_name: nikoliazekter
+  sethorizer:
+    name: sethorizer
+    codingame_profile: 1a5ec5ab81ae0e17c46536ff06ca398f599768
+    codingame_name: sethorizer
+    github_name: sethorizer
+  thesauce:
+    name: TheSauce
+    codingame_profile: b23fbff39526cbe7b9809e4384bcc09d5903851
+    codingame_name: TheSauce
+    github_name: GitTheSauce
+  cosmo:
+    name: Cosmo
+    codingame_profile: e52c763a1caa46a2688f951b610ee8618329051
+    codingame_name: Cosmo
+    github_name: MarcosCosmos
+  mrbrown77:
+    name: MrBrown77
+    codingame_profile: d5fd981572108ffe82fa726733e999cb8799751
+    codingame_name: MrBrown77
+  icebox:
+    name: Icebox
+    codingame_profile: 5b4f89ffbaad7f5a6ad256595da624679763911
+    codingame_name: Icebox
+  player_one:
+    name: player_one
+    codingame_profile: fefb3b0a360d9451bde5553900470e2d677255
+    codingame_name: player_one
+  marktellez:
+    name: MarkTellez
+    codingame_profile: 2408c87bfb7392b827715da874218a730628161
+    codingame_name: MarkTellez
+    github_name: MarkTellez
+  inoryy:
+    name: inoryy
+    codingame_profile: f4cfae1741fd16ece88704684714d7df8856061
+    codingame_name: inoryy
+    github: Inoryy
+
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock

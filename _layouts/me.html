@@ -1,0 +1,26 @@
+---
+layout: default
+title: Me
+---
+<article id="post-article">
+  <div id="post-title">I'm a swag-colored kitteh. Fear me. Rawr.</div>
+  <div id="me-container">
+    <div id="accounts">
+      <div class="account">
+        <img class="account_icon" src="{{ "/assets/github-32.png" | relative_url }}" />
+        <span id="github_username" class="account_name">
+          <a href="https://github.com/{{ site.github_username | escape }}">{{ site.github_username | escape }}</a>
+        </span>
+      </div>
+      <div class="account">
+        <img class="account_icon" src="{{ "/assets/codingame-32.png" | relative_url }}" />
+        <span id="codingame_username" class="account_name">
+          <a href="https://www.codingame.com/profile/{{ site.codingame_profile | escape }}">{{ site.codingame_username | escape }}</a>
+        </span>
+      </div>
+    </div>
+    <div id="me-text">
+      {{ content }}
+    </div>
+  </div>
+</article>
